@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>MOZGI EVENT</title>
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <div class="wrap">
+         <!-- Логотип -->
+         <header class="header">
+            <!-- language -->
+            <div class="language-selector">
+               <img
+                  src="/assets/language.png"
+                  alt="language"
+                  class="language__img"
+               />
+               <div class="language-options">
+                  <span class="lang">ENG</span>
+                  <span class="lang">UA</span>
+               </div>
+            </div>
+
+            <h1 class="logo-wrapper">
+               <svg
+                  class="logo-svg"
+                  viewBox="0 0 200 60"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="MOZGI EVENT"
+               >
+                  <defs>
+                     <linearGradient id="fillUp" x1="0" y1="1" x2="0" y2="0">
+                        <stop offset="0%" stop-color="black" />
+                        <stop offset="100%" stop-color="black" />
+                     </linearGradient>
+                     <mask id="reveal">
+                        <rect width="200" height="60" fill="white">
+                           <animate
+                              attributeName="y"
+                              from="60"
+                              to="0"
+                              dur="1s"
+                              fill="freeze"
+                           />
+                        </rect>
+                     </mask>
+                  </defs>
+
+                  <!-- Контур -->
+                  <text
+                     x="100"
+                     y="35"
+                     text-anchor="middle"
+                     font-size="35"
+                     font-family="Arial Black"
+                     fill="none"
+                     stroke="black"
+                     stroke-width="1.5"
+                  >
+                     MOZGI
+                  </text>
+
+                  <!-- Заливка -->
+                  <text
+                     x="100"
+                     y="35"
+                     text-anchor="middle"
+                     font-size="35"
+                     font-family="Arial Black"
+                     fill="url(#fillUp)"
+                     mask="url(#reveal)"
+                  >
+                     MOZGI
+                  </text>
+
+                  <!-- EVENT по центру -->
+                  <text
+                     x="100"
+                     y="52"
+                     text-anchor="middle"
+                     font-size="8"
+                     font-family="Arial"
+                     fill="black"
+                  >
+                     EVENT
+                  </text>
+               </svg>
+            </h1>
+         </header>
+
+         <!-- центр -->
+         <main class="main">
+            <aside class="side-text left">where?</aside>
+            <div class="wrap-ellipse">
+               <img src="/assets/ellipse.png" alt="" class="ellipse" />
+
+               <div class="main-title">FULL-CYCLE EVENT AGENCY</div>
+
+               <!-- круг -->
+               <div class="text-wrap">
+                  <div class="center-dot"></div>
+                  <img src="/assets/text.png" alt="text" class="text" />
+               </div>
+            </div>
+
+            <aside class="side-text right">what?</aside>
+         </main>
+
+         <!-- полоса -->
+         <div class="diagonal-text" id="diagonalText">
+            <div class="text-line-wrapper left">
+               <div class="text-left">
+                  <span
+                     >EVENT AGENCY — EVENT AGENCY — EVENT AGENCY — EVENT AGENCY
+                     —</span
+                  >
+                  <span
+                     >EVENT AGENCY — EVENT AGENCY — EVENT AGENCY — EVENT AGENCY
+                     —</span
+                  >
+               </div>
+            </div>
+            <div class="text-line-wrapper right">
+               <div class="text-right">
+                  <span
+                     >EVENT AGENCY — EVENT AGENCY — EVENT AGENCY — EVENT AGENCY
+                     —</span
+                  >
+                  <span
+                     >EVENT AGENCY — EVENT AGENCY — EVENT AGENCY — EVENT AGENCY
+                     —</span
+                  >
+               </div>
+            </div>
+         </div>
+
+         <!-- подвал -->
+         <footer><div class="bottom-text">who?</div></footer>
+      </div>
+   </body>
+
+   <script>
+      function updateDiagonalAngle() {
+         const el = document.getElementById("diagonalText");
+
+         const angle = Math.atan(window.innerHeight / window.innerWidth); // вычисляем угол
+         el.style.transform = `translateY(98vh) rotate(-${angle}rad)`; // сдвиг вниз + поворот вверх
+      }
+
+      window.addEventListener("resize", updateDiagonalAngle);
+      updateDiagonalAngle();
+   </script>
+</html>
